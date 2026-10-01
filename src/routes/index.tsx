@@ -62,7 +62,7 @@ function Counter({ to, prefix = "" }: { to: number; prefix?: string }) {
   const [n, setN] = useState(0);
   useEffect(() => {
     const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
+      if (!e?.isIntersecting) return;
       io.disconnect();
       const start = performance.now();
       const tick = (t: number) => {
